@@ -1,6 +1,6 @@
-import Layout from '../components/Layout';
-import ContactForm from '../components/ContactForm';
-import ContactList from '../components/ContactList';
+import Layout from './components/Layout';
+import ContactForm from './components/ContactForm';
+import ContactList from './components/ContactList';
 import { connect } from 'react-redux';
 
 const App = ({ length }) => (
