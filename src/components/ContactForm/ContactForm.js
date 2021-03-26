@@ -21,6 +21,9 @@ class ContactForm extends Component {
   handlerSubmitContactFrom = e => {
     e.preventDefault();
 
+    const { name, number } = this.state;
+    if (name === '' && number === '') return;
+
     this.props.onSubmitForm(this.state);
     this.reset();
   };
