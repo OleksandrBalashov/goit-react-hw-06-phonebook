@@ -9,5 +9,4 @@ export const addContact = createAction('contact/Add', payload => ({
 }));
 
 export const deleteContact = createAction('contact/Delete');
-
 export const filterContacts = createAction('contact/Filter');
