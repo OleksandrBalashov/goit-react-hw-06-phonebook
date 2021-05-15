@@ -1,9 +1,15 @@
+import React from 'react';
 import Layout from './components/Layout';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import { connect } from 'react-redux';
+import { RootState } from './redux/store';
 
-const App = ({ length }) => (
+interface Props {
+  length: number;
+}
+
+const App = ({ length }: Props) => (
   <>
     <Layout>
       <h1 className="app__title">Phonebook</h1>
@@ -13,7 +19,7 @@ const App = ({ length }) => (
   </>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: RootState) => ({
   length: state.contacts.items.length,
 });
 

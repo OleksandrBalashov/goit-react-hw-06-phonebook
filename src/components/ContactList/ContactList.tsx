@@ -1,10 +1,14 @@
 import React from 'react';
 import ContactFilter from '../FilterContacts';
-import PropTypes from 'prop-types';
+import { PropsContacts } from './ContactListContainer';
 import styles from './Contacts.module.css';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
-  const onDelete = e => onDeleteContact(e.target.dataset.id);
+const ContactList = ({ contacts, onDeleteContact }: PropsContacts) => {
+  const onDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const id = e.currentTarget.id;
+
+    onDeleteContact(id);
+  };
 
   return (
     <>
@@ -28,11 +32,6 @@ const ContactList = ({ contacts, onDeleteContact }) => {
       </ul>
     </>
   );
-};
-
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
-  onDeleteContact: PropTypes.func,
 };
 
 export default ContactList;
