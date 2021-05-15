@@ -1,7 +1,7 @@
 import shortid from 'shortid';
 import { createAction } from '@reduxjs/toolkit';
 
-interface Payload {
+export interface Payload {
   name: string;
   number: string;
 }

@@ -22,7 +22,7 @@ const mapStateToProps = ({ contacts: { items, filter } }: RootState) => ({
 });
 
 const mapDispatchToProps = {
-  onDeleteContact: (id: string) => deleteContact(id),
+  onDeleteContact: (id?: string) => deleteContact(id),
 };
 
 const connector =  connect(mapStateToProps, mapDispatchToProps);

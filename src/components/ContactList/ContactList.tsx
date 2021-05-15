@@ -4,8 +4,8 @@ import { PropsContacts } from './ContactListContainer';
 import styles from './Contacts.module.css';
 
 const ContactList = ({ contacts, onDeleteContact }: PropsContacts) => {
-  const onDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const id = e.currentTarget.id;
+  const onDelete = (event: React.SyntheticEvent<HTMLButtonElement>) => {
+    const id = event.currentTarget.dataset.id;
 
     onDeleteContact(id);
   };
